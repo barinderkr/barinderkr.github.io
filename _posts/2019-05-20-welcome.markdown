@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Welcome"
+date:   2019-05-19 9:45:31 +0530
+---
+Hi Folks,
+
+This is my first post.
+
+I've started writing this blog to share learning experience about my journey with Data Science.
+More stories are coming, so stay tuned.
+
+ ~Bari
