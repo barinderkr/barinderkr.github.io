@@ -190,7 +190,8 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 .highlight {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-top: 15px; }
 
 /**
  * Images
@@ -274,16 +275,16 @@ pre {
  * Wrapper
  */
 .wrapper {
-  max-width: -webkit-calc(800px - (30px * 2));
-  max-width: calc(800px - (30px * 2));
+  max-width: -webkit-calc(1000px - (30px * 2));
+  max-width: calc(1000px - (30px * 2));
   margin-right: auto;
   margin-left: auto;
   padding-right: 30px;
   padding-left: 30px; }
   @media screen and (max-width: 800px) {
     .wrapper {
-      max-width: -webkit-calc(800px - (30px));
-      max-width: calc(800px - (30px));
+      max-width: -webkit-calc(1000px - (30px));
+      max-width: calc(1000px - (30px));
       padding-right: 15px;
       padding-left: 15px; } }
 
@@ -410,7 +411,9 @@ pre {
   text-indent: 6px;
   font-family: 'Josefin Sans';
   font-weight: 300;
-  padding-top: 5em; }
+  padding-top: 5em;
+  padding-bottom: 2em;
+  border-bottom: 2px dashed; }
 
 .page-title {
   text-transform: uppercase;
@@ -551,10 +554,9 @@ pre {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 62px;
+  font-size: 42px;
   text-align: center;
-  font-family: "PT Sans";
-  font-weight: 900; }
+  font-family: "PT Sans"; }
   @media screen and (max-width: 800px) {
     .post-title {
       font-size: 36px; } }
@@ -562,8 +564,6 @@ pre {
 .post-content {
   margin-bottom: 30px;
   padding-bottom: 3em !important; }
-  .post-content p {
-    font-size: 1.5rem; }
   .post-content h2 {
     font-size: 32px; }
     @media screen and (max-width: 800px) {

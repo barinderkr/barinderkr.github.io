@@ -14,7 +14,7 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 // Width of the content area
-$content-width:    800px;
+$content-width:    1000px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -80,6 +80,7 @@ p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
+    margin-top: $spacing-unit / 2;
 }
 
 
@@ -356,6 +357,8 @@ pre {
   font-family: 'Josefin Sans';
   font-weight: 300;
   padding-top: 5em;
+  padding-bottom: 2em;
+  border-bottom: 2px dashed
 }
 .page-title {
   text-transform: uppercase;
@@ -512,11 +515,11 @@ pre {
   margin-bottom: $spacing-unit;
 }
 .post-title {
-  font-size: 62px;
+  font-size: 42px;
 
   text-align: center;
   font-family: "PT Sans";
-  font-weight: 900;
+  // font-weight: 900;
   @include media-query($on-laptop) {
     font-size: 36px;
   }
@@ -525,7 +528,7 @@ pre {
   margin-bottom: $spacing-unit;
   padding-bottom: 3em !important;
   p {
-    font-size: 1.5rem;
+    // font-size: 1.5rem;
   }
   h2 {
     font-size: 32px;
