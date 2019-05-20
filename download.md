@@ -1,7 +1,6 @@
 ---
 layout: page
-title: Download
-permalink: /download/
+title: Github
+permalink: /github/
 
-tagline: "Loved it?"
 ---

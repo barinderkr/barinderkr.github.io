@@ -63,7 +63,9 @@ body.light {
       }
     }
     &.postLink{
-      color: darken($l-link-color, 50%) !important;
+      // color: darken($l-link-color, 50%) !important;
+      color: $d-crimson !important;
+      border-color: $d-crimson;
 
       &:visited {
           color: $l-crimson !important;
@@ -71,7 +73,9 @@ body.light {
       }
     }
     &.post-title-link{
-      color: darken($l-link-color, 50%) !important;
+      // color: darken($l-link-color, 50%) !important;
+      color: $d-crimson !important;
+      border-color: $d-crimson;
 
       &:visited {
           color: $l-crimson !important;
