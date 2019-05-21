@@ -7,7 +7,8 @@ Hi Folks,
 
 This is my first post.
 
-I've started writing this blog to share learning experience about my journey with Data Science.
+I've started writing this blog to share learning experience about my journey with Data Science. It is hosted on ❤ **Github** and **Jekyll** with **Gravity** theme is used to generate static pages in the repository.
+
 More stories are coming, so stay tuned.
 
  ~Bari
