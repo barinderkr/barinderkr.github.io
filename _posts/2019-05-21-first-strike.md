@@ -39,7 +39,7 @@ In the approximate order of difficulty
     - The goal of mechanistic analysis is to understand the exact changes in variables that lead to exact changes in other variables. 
     
     
- ### What does experimental design mean?
+### What does experimental design mean?
  
 Experimental design is organizing an experiment so that you have the correct data
   This process involves:
