@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "'R'you Ready"
+title:  "'R' you Ready?"
 date:   2019-05-19 9:45:31 +0530
 ---
 
