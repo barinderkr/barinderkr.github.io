@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "First Strike"
+date:   2019-05-21 9:45:31 +0530
+---
+
 In this post I explained some of the major jargons and definitions that are needed to understand the basic theory of data science which will be discussed in later posts in depth.
 
 ### What is Data Science?
