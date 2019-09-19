@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Recommendation Engine</title>
+  <meta name="description" content="  Hi folks, this blog is about a problem statement that I solve recently.">
+  <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Source+Sans+Pro:400,700,200,300|Josefin+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="canonical" href="http://localhost:4000/2019/08/11/recommendation-engine.html">
+  <link rel="alternate" type="application/rss+xml" title="Dataverse" href="http://localhost:4000/feed.xml">
+</head>
+
+
+  <body class=" light  ">
+
+    
+<div class="wrapper">
+  <center> <a href="/index.html"><div class="site-title">   Dataverse </div></a></center>
+</div>
+<div class="wrapper site-description">
+<center>  Finding peace between Data & Marketing </center>
+</div>
+<div class="wrapper">
+  <center>
+  <div class="trigger site-navigation">
+    <a class="page-link" href="http://localhost:4000">HOME</a>
+
+    
+    
+
+    <span class="exclamationMark">/</span><a class="page-link" href="/about/">About</a>
+    
+    
+    
+
+    <span class="exclamationMark">/</span><a class="page-link" href="/resume/">Resume</a>
+    
+    
+    
+
+    <span class="exclamationMark">/</span><a class="page-link" href="/github/">Github</a>
+    
+    
+    
+    
+    
+    
+    
+
+    <span class="exclamationMark">/</span><a class="page-link" href="/projects/">Projects</a>
+    
+    
+    
+    
+  </div>
+  </center>
+</div>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline"><a class="post-title-link"  href="/2019/08/11/recommendation-engine.html">Recommendation Engine</a></h1>
+  <center>  <p class="post-meta"><time datetime="2019-08-11T12:15:31+08:00" itemprop="datePublished">Aug 11, 2019</time></p>
+    
+   </center>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <blockquote>
+  <p>Hi folks, this blog is about a problem statement that I solve recently.</p>
+</blockquote>
+
+<p><strong>Problem Statement</strong>: Build a generic recommendation engine which is going to recommend a new product based of previous customer preferences and customer segmentation that suits customer profile.</p>
+
+<p><strong>Introduction</strong></p>
+
+<p><em>Content-Based Filtering</em> was the initial algorithm that was used in the <em>Recommendation Engine</em>. It will recommend the same product lines that you liked in the past. There are many algorithms that come under content-based filtering can be used in <em>Recommendation Engine</em> such as Top n approach, Rating scale approach, Euclidean Distance, Pearson Correlation. The drawback of content-based algorithm is, it will not recommend products which customer has not purchased in the past. <em>Collaborative filtering</em> is used to overcome this problem.</p>
+
+<p><em>Collaborative filtering</em> is the fundamental underlying principle of <em>Recommendation Engine</em>. It can use either user to user similarity or item to item similarity. User-User collaborative filtering can be used when there are a smaller number of users in the database. The computation complexity increases with an increasing customer base. The problem arises when a new user or new product is entered to the list, and it is called <em>Cold Start</em>. <em>Recommendation Engine</em> should identify the new user and recommend the most popular products to him. For example, in online streaming websites, the movies recommended for a new person will be based on the popularity of the film in language-wise and region-wise. For a product cold start, initially, engine is designed to do content-based filtering and make the recommendation. Once the users start interacting with this new product, the model will begin recommending to the right people.</p>
+
+<p><strong>Approach</strong></p>
+
+<ul>
+  <li>Assumption 1: I already possess data of various FMCG products and its ingredients.</li>
+  <li>Assumption 2: I already possess data on customer profile and their purchase history.</li>
+</ul>
+
+<p><img src="/images/rec-eng-1.png" alt="p1" /></p>
+
+<p>Let’s take an example of a new product as Patanjali Aloe Vera moisturiser. Since we are starting with Product cold start; Recommendation engine should follow any of the content-based filtering algorithms. It can run a cluster analysis with the given ingredient to find which cluster it belongs to.</p>
+
+<p>From the cluster analysis, it identifies that the product belongs to the cluster called <strong>“Herbal Cosmetics”</strong>. Now having the cluster in our hand, we also have the list of the products that are closely related to our new product. With this recommendation engine filters out the potential customer for this new product and recommend this product through the interest of the main page of the buyer segment. In addition to that, whenever a random customer buys any product in this cluster, the recommendation engine lists the other relevant products along with the new product.</p>
+
+<p><img src="/images/rec-eng-2.png" alt="p2" /></p>
+
+<p>Once we get enough interaction from the customer by purchasing the product and rating the new product, we have enough data to run collaborative filtering. In this filtering, we use matrix factorisation to identify the target customer by predicting what rating he/she might give for the new product. Matrix factorisation is usually performed to reduce the data storage in the system and to predict the value for an unknown slot in the matrix.</p>
+
+<p><img src="/images/rec-eng-3.png" alt="p3" /></p>
+
+<p>Let us take an example from the above picture. In a given cluster, A, B, C and D are the customers who gave ratings to different products M1, M2, M4, M5 including our new product M3. Using the matrix factorisation, we split the matrix into two smaller matrices based on its rank. It can be seen that few products were not rated by the customers because they have not tried the product. Now by applying the method again, we can determine who is my potential customer for my new product, Patanjali Aloe Vera Moisturizer.</p>
+
+<p><img src="/images/rec-eng-4.png" alt="p4" /></p>
+
+<p>For customer D, using this technique, we predicted that he would give five ratings for the new product. So, the recommendation engine recommends this product to this particular customer.</p>
+
+<p>Thanks for reading, see you soon with another post.</p>
+
+  </div>
+
+  <footer class="postNavigation">
+  
+    <a class="postPrev" href="/2019/07/05/people-analytics.html">
+        &laquo; People Analytics
+    </a>
+  
+  
+  </footer>
+
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading small-site-title">Dataverse</h2>
+
+    <div class="footer-col-wrapper">
+      
+      <div class="footer-col footer-col-2 footer-content">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/barinderkr"><span class="icon icon--github"><svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">barinderkr</span></a>
+
+          </li>
+          
+
+          
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

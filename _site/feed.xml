@@ -5,9 +5,271 @@
     <description>Finding peace between Data &amp; Marketing</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 May 2019 14:44:56 +0800</pubDate>
-    <lastBuildDate>Mon, 20 May 2019 14:44:56 +0800</lastBuildDate>
+    <pubDate>Thu, 19 Sep 2019 21:20:16 +0800</pubDate>
+    <lastBuildDate>Thu, 19 Sep 2019 21:20:16 +0800</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Recommendation Engine</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Hi folks, this blog is about a problem statement that I solve recently.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Problem Statement&lt;/strong&gt;: Build a generic recommendation engine which is going to recommend a new product based of previous customer preferences and customer segmentation that suits customer profile.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Introduction&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Content-Based Filtering&lt;/em&gt; was the initial algorithm that was used in the &lt;em&gt;Recommendation Engine&lt;/em&gt;. It will recommend the same product lines that you liked in the past. There are many algorithms that come under content-based filtering can be used in &lt;em&gt;Recommendation Engine&lt;/em&gt; such as Top n approach, Rating scale approach, Euclidean Distance, Pearson Correlation. The drawback of content-based algorithm is, it will not recommend products which customer has not purchased in the past. &lt;em&gt;Collaborative filtering&lt;/em&gt; is used to overcome this problem.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Collaborative filtering&lt;/em&gt; is the fundamental underlying principle of &lt;em&gt;Recommendation Engine&lt;/em&gt;. It can use either user to user similarity or item to item similarity. User-User collaborative filtering can be used when there are a smaller number of users in the database. The computation complexity increases with an increasing customer base. The problem arises when a new user or new product is entered to the list, and it is called &lt;em&gt;Cold Start&lt;/em&gt;. &lt;em&gt;Recommendation Engine&lt;/em&gt; should identify the new user and recommend the most popular products to him. For example, in online streaming websites, the movies recommended for a new person will be based on the popularity of the film in language-wise and region-wise. For a product cold start, initially, engine is designed to do content-based filtering and make the recommendation. Once the users start interacting with this new product, the model will begin recommending to the right people.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Approach&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Assumption 1: I already possess data of various FMCG products and its ingredients.&lt;/li&gt;
+  &lt;li&gt;Assumption 2: I already possess data on customer profile and their purchase history.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/rec-eng-1.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let’s take an example of a new product as Patanjali Aloe Vera moisturiser. Since we are starting with Product cold start; Recommendation engine should follow any of the content-based filtering algorithms. It can run a cluster analysis with the given ingredient to find which cluster it belongs to.&lt;/p&gt;
+
+&lt;p&gt;From the cluster analysis, it identifies that the product belongs to the cluster called &lt;strong&gt;“Herbal Cosmetics”&lt;/strong&gt;. Now having the cluster in our hand, we also have the list of the products that are closely related to our new product. With this recommendation engine filters out the potential customer for this new product and recommend this product through the interest of the main page of the buyer segment. In addition to that, whenever a random customer buys any product in this cluster, the recommendation engine lists the other relevant products along with the new product.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/rec-eng-2.png&quot; alt=&quot;p2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once we get enough interaction from the customer by purchasing the product and rating the new product, we have enough data to run collaborative filtering. In this filtering, we use matrix factorisation to identify the target customer by predicting what rating he/she might give for the new product. Matrix factorisation is usually performed to reduce the data storage in the system and to predict the value for an unknown slot in the matrix.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/rec-eng-3.png&quot; alt=&quot;p3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Let us take an example from the above picture. In a given cluster, A, B, C and D are the customers who gave ratings to different products M1, M2, M4, M5 including our new product M3. Using the matrix factorisation, we split the matrix into two smaller matrices based on its rank. It can be seen that few products were not rated by the customers because they have not tried the product. Now by applying the method again, we can determine who is my potential customer for my new product, Patanjali Aloe Vera Moisturizer.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/rec-eng-4.png&quot; alt=&quot;p4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For customer D, using this technique, we predicted that he would give five ratings for the new product. So, the recommendation engine recommends this product to this particular customer.&lt;/p&gt;
+
+&lt;p&gt;Thanks for reading, see you soon with another post.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 11 Aug 2019 12:15:31 +0800</pubDate>
+        <link>http://localhost:4000/2019/08/11/recommendation-engine.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/08/11/recommendation-engine.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>People Analytics</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Hi folks, I come up with another blog and this time we’re gonna take a deep dive and practices about people analytics, so let’s begin.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;People analytics&lt;/strong&gt; is a data-controlled approach of managing workforce related decisions.&lt;/p&gt;
+
+&lt;p&gt;People analytics which is also known as HR- analytics, workforce-analytics, or talent-analytics revolves around analysing people-related issues, such as &lt;em&gt;recruiting, performance evaluation, leadership, hiring and promotion, job design, compensation, and collaboration using data&lt;/em&gt;. Advanced analytics can optimise the way, organisations identify, attract, develop, and retain talent. It can help managers make better decisions about employees or workforce.&lt;/p&gt;
+
+&lt;p&gt;The best-known scientific definition of HR analytics is by &lt;em&gt;Heuvel &amp;amp; Bondarouk&lt;/em&gt;. According to them, ”HR analytics is the systematic identification and quantification of the people drivers of business outcomes” (Heuvel &amp;amp; Bondarouk, 2016).&lt;/p&gt;
+
+&lt;p&gt;People analytics aims at replacing intuition and human instincts-based decisions with data driven decision making. People analytics applies statistics, technology and expertise to large sets of talent data, which results in making better management and business decisions for an organisation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/people-analytics.png&quot; alt=&quot;p1&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;insights&quot;&gt;INSIGHTS&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;People Analytics has increased the recruiting efficiency by 80%&lt;/li&gt;
+  &lt;li&gt;People Analytics has improved the business productivity by 25%&lt;/li&gt;
+  &lt;li&gt;People Analytics has resulted in decrease in attrition rates by 50%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;people-analytics-can-answer-questions-like-&quot;&gt;People Analytics can answer questions like-&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Predicting the rising attrition rates&lt;/li&gt;
+  &lt;li&gt;Identifying the issue, or predict resignations&lt;/li&gt;
+  &lt;li&gt;Effectively calculating and allocating people budget&lt;/li&gt;
+  &lt;li&gt;Improving the HR systems quality of data&lt;/li&gt;
+  &lt;li&gt;Developing a people analytics capability in your HR function&lt;/li&gt;
+  &lt;li&gt;ROI of a newly hired employee&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All these questions can only be facilitated using data.&lt;/p&gt;
+
+&lt;p&gt;We need below two data sources to address these problems:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Human Resources Information System (HRIS)&lt;/li&gt;
+  &lt;li&gt;Performance Management System.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;HR departments have a vast amounts of HR data which often remains unused until organisations start to analyse their people problems by using this data. When they do so, they are actually occupied in HR analytics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/people-analytics-2.png&quot; alt=&quot;p2&quot; /&gt;
+&lt;img src=&quot;/images/people-analytics-3.png&quot; alt=&quot;p3&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;benefits-of-people-analytics&quot;&gt;Benefits of people analytics:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Standardize the process of recruiting and diversify hiring&lt;/strong&gt; -
+    &lt;blockquote&gt;
+      &lt;p&gt;Using advanced analytics to identify characteristics associated with successful hires, which can help to evaluate new candidates for those characteristics. This accelerates the hiring process and also helps in hiring a more diversified set of hires.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Identifying drivers of high performance&lt;/strong&gt; -
+    &lt;blockquote&gt;
+      &lt;p&gt;Discovering the unique factors that influence organization-wide performance. Talent development teams and recruiting teams can use the insights to address the performance gaps.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Competitive advantage against the industry&lt;/strong&gt; -
+    &lt;blockquote&gt;
+      &lt;p&gt;Leverage the competitor’s publicly available data to identify the best practices in competition and compare your workforce to the competition.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/people-analytics-4.png&quot; alt=&quot;p4&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;driving-factors-of-workforce-analytics&quot;&gt;Driving factors of workforce analytics:&lt;/h3&gt;
+
+&lt;p&gt;There are a variety of internal and external factors that influence the organisations to use People analytics to streamline their Workforce related processes.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;External Factors&lt;/strong&gt;: The transforming Global Market is the major driving factor for digging deep into the effective utilization of resources and capabilities across organisation. In addition to that, the encouragement of more transparent norms, necessitates the organisations to follow more streamlined and unbiased processes in hiring and promotions. The availability of huge amount of data like - external labour market data and social network applications can facilitate in applying semantic analytics to uncover people emotions, which can give excellent insights.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/people-analytics-5.png&quot; alt=&quot;p5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Internal Factors&lt;/strong&gt;: Workforce analytics of the company being acquired - can influence highly strategic decisions like mergers and acquisitions of companies. This can give an insightful view of the workforce, with which we can take better decisions of reforming leadership and capabilities requirements. A deep analysis of the existing workforce can be used to classify the employees as Top Performers. The companies can continuously address employee engagement which can increase the retention rate of the Top Performers and reduce the hiring effort. A thorough company wide analytics can be implemented to build norms for data compliance.&lt;/p&gt;
+
+&lt;h3 id=&quot;real-life-examples-of-people-analytics-&quot;&gt;Real Life Examples of People Analytics-&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;Recruiting decisions in a bank:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;An Asian bank with 8,000 people across 30 branches decided to leverage data analytics to reform hiring process, identify top performers, reassigning roles, and gain insight of key indicators of performance.&lt;/p&gt;
+
+&lt;p&gt;Data about 30 factors aligned with 5 categories - demographics, branch information, performance, professional history, and tenure – was gathered for each employee. Analytics was then used to identify characteristics of high and low performers and classify them in profiles accordingly.&lt;/p&gt;
+
+&lt;p&gt;Further ML - based analysis disclosed that financial outcomes were highly dependent on branch and team structures. It also revealed that bank’s overall success was influenced by a few key roles. As a result, new organizational structures were proposed and previous assumptions about internal hiring were upgraded.&lt;/p&gt;
+
+&lt;p&gt;Deeper analysis proved that most efficient people came from a variety of institutions and not just Top academic institutions. Further it was observed that certain positions served as catalysts for Top Performers.&lt;/p&gt;
+
+&lt;p&gt;Both these findings have changed the processes around: bank recruitment, performance measurement, and matching profiles to roles. The results:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;26 percent increase in branch productivity&lt;/li&gt;
+  &lt;li&gt;80 percent increase in rate of conversion of new recruits after changes were put in place&lt;/li&gt;
+  &lt;li&gt;Net income also increased by 14 percent.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;references-&quot;&gt;References-&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;https://www.mckinsey.com/business-functions/mckinsey-analytics/our-insights/using-people-analytics-to-drive-business-performance-a-case-study&lt;/li&gt;
+  &lt;li&gt;https://www.mckinsey.com/solutions/orgsolutions/overview/people-analytics&lt;/li&gt;
+  &lt;li&gt;https://www.mckinsey.com/business-functions/organization/our-insights/people-analytics-reveals-three-things-hr-may-be-getting-wrong&lt;/li&gt;
+  &lt;li&gt;https://www.coursera.org/learn/wharton-people-analytics&lt;/li&gt;
+  &lt;li&gt;https://www.analyticsinhr.com/blog/what-is-hr-analytics/&lt;/li&gt;
+  &lt;li&gt;https://www.cornerstoneondemand.com/glossary/people-analytics&lt;/li&gt;
+  &lt;li&gt;https://www.pwc.com/gx/en/services/people-organisation/people-analytics-and-insights.html&lt;/li&gt;
+  &lt;li&gt;https://www.ibm.com/services/us/gbs/thoughtleadership/peopleequation/&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 05 Jul 2019 12:15:31 +0800</pubDate>
+        <link>http://localhost:4000/2019/07/05/people-analytics.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/07/05/people-analytics.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>What is DS?</title>
+        <description>&lt;p&gt;In this post I explained some of the major jargons and definitions that are needed to understand the basic theory of data science which will be discussed in later posts in depth.&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-data-science&quot;&gt;What is Data Science?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Data Science is a field in which we use &lt;strong&gt;Data&lt;/strong&gt; to answer &lt;strong&gt;Questions&lt;/strong&gt;!&lt;/li&gt;
+  &lt;li&gt;It involves:
+    &lt;ul&gt;
+      &lt;li&gt;Statistics&lt;/li&gt;
+      &lt;li&gt;Computer Science&lt;/li&gt;
+      &lt;li&gt;Mathematics&lt;/li&gt;
+      &lt;li&gt;Data Cleaning &amp;amp; Formating&lt;/li&gt;
+      &lt;li&gt;Data Visualisation&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;types-of-data-sceince-questions&quot;&gt;Types of Data Sceince Questions&lt;/h3&gt;
+&lt;p&gt;In the approximate order of difficulty&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;Descriptive&lt;/strong&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;The goal of descriptive analysis is to describe or summarize a set of data.&lt;/li&gt;
+      &lt;li&gt;Descriptive analysis will generate simple summaries about the samples and their measurements. For Ex: measures of central tendency (eg: mean, median, mode) or
+ measures of variability (eg: range, standard deviations or variance).&lt;/li&gt;
+      &lt;li&gt;Censuses is a common example of descriptive analysis&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Exploratory&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The goal of exploratory analysis is to examine or explore the data and find relationships. that weren’t previously known&lt;/li&gt;
+      &lt;li&gt;Just because you observe a relationship between two variables during exploratory analysis, it does not mean that one necessarily causes the other.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Inferential&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The goal of inferential analyses is to use a relatively small sample of data to infer or say something about the population at large.&lt;/li&gt;
+      &lt;li&gt;Inferential analysis is commonly the goal of statistical modelling, where you have a small amount of information to extrapolate and generalize that information to a larger group.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Predictive&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The goal of predictive analysis is to use current data to make predictions about future data.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Causal&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;the goal of causal analysis is to see what happens to one variable when we manipulate another variable - looking at the cause and effect of a relationship.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Mechanistic&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;The goal of mechanistic analysis is to understand the exact changes in variables that lead to exact changes in other variables.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;what-does-experimental-design-mean&quot;&gt;What does experimental design mean?&lt;/h3&gt;
+
+&lt;p&gt;Experimental design is organizing an experiment so that you have the correct data
+  This process involves:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Clearly formulating your question in advance of any data collection&lt;/li&gt;
+  &lt;li&gt;Designing the best set-up possible to gather the data to answer your question&lt;/li&gt;
+  &lt;li&gt;Identifying problems or sources of error in your design&lt;/li&gt;
+  &lt;li&gt;Collecting the appropriate data.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Principles of experimental design&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Independent variable&lt;/strong&gt; (AKA factor): The variable that the experimenter manipulates; it does not depend on other variables being measured. Often displayed on the x-axis.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Dependent variable&lt;/strong&gt;: The variable that is expected to change as a result of changes in the independent variable. Often displayed on the y-axis, so that changes in X, the independent variable, effect changes in Y.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Confounder&lt;/strong&gt;: An extraneous variable that may affect the relationship between the dependent and independent variables. This “balancing” of confounders is often achieved by randomization.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Replication&lt;/strong&gt;: It is pretty much what it sounds like, repeating an experiment with different experimental subjects&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;P-Value&lt;/strong&gt;: One of the many things often reported in experiments is a value called the p-value. This is a value that tells you the probability that the results of your experiment were observed by chance.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;R and Python language is an essential learning in Data Science. In the next post I familarize you with R and its usages.&lt;/p&gt;
+
+&lt;p&gt;~ Bari&lt;/p&gt;
+</description>
+        <pubDate>Tue, 21 May 2019 12:15:31 +0800</pubDate>
+        <link>http://localhost:4000/2019/05/21/first-strike.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2019/05/21/first-strike.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Welcome</title>
@@ -15,8 +277,9 @@
 
 &lt;p&gt;This is my first post.&lt;/p&gt;
 
-&lt;p&gt;I’ve started writing this blog to share learning experience about my journey with Data Science.
-More stories are coming, so stay tuned.&lt;/p&gt;
+&lt;p&gt;I’ve started writing this blog to share learning experience about my journey with Data Science. It is hosted on ❤ &lt;strong&gt;Github&lt;/strong&gt; and &lt;strong&gt;Jekyll&lt;/strong&gt; with &lt;strong&gt;Gravity&lt;/strong&gt; theme is used to generate static pages in the repository.&lt;/p&gt;
+
+&lt;p&gt;More stories are coming, so stay tuned.&lt;/p&gt;
 
 &lt;p&gt;~Bari&lt;/p&gt;
 </description>

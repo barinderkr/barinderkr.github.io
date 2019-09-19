@@ -12,7 +12,7 @@
  */
 body.light {
   color: #111;
-  background-color: #fdfdfd;
+  background-color: #fff;
   /**
    * Links
    */
@@ -75,7 +75,7 @@ body.light {
     color: #111; }
   @media screen and (max-width: 600px) {
     body.light {
-      background-color: #fdfdfd;
+      background-color: #fff;
       border: 1px solid #e8e8e8; }
       body.light .menu-icon > svg path {
         fill: #424242; } }
@@ -199,8 +199,10 @@ ul, ol, dl, figure,
  * Images
  */
 img {
-  max-width: 100%;
-  vertical-align: middle; }
+  max-width: 70%;
+  vertical-align: middle;
+  margin: 10px auto 20px;
+  display: block; }
 
 /**
  * Figures
@@ -357,7 +359,7 @@ pre {
   text-indent: 2px; }
 
 .postContent {
-  padding-top: 3.5em;
+  padding-top: 1.5em;
   text-align: center; }
 
 .postDate {
